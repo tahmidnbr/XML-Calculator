@@ -12,7 +12,7 @@
         android:id="@+id/screenField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +76,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="60dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:id="@+id/sqrtBtn"
                 android:text="sqrt"
                 android:fontFamily="@font/ropasans_regular"
@@ -90,7 +90,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="60dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:id="@+id/sinBtn"
                 android:text="sin"
                 android:fontFamily="@font/ropasans_regular"
@@ -105,7 +105,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="60dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:id="@+id/cosBtn"
                 android:text="cos"
                 android:fontFamily="@font/ropasans_regular"
@@ -120,7 +120,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="60dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:id="@+id/tanBtn"
                 android:text="tan"
                 android:fontFamily="@font/ropasans_regular"
@@ -135,7 +135,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="60dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:id="@+id/radBtn"
                 android:text="rad"
                 android:fontFamily="@font/ropasans_regular"
@@ -160,7 +160,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:id="@+id/clr"
                 android:text="AC"
                 android:fontFamily="@font/ropasans_regular"
@@ -175,7 +175,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:id="@+id/dlt"
                 android:layout_marginStart="5dp"
                 android:text="C"
@@ -190,7 +190,7 @@
                 />
             <com.google.android.material.button.MaterialButton
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:id="@+id/div"
                 android:layout_marginStart="5dp"
                 android:text="÷"
@@ -205,7 +205,7 @@
                 />
             <com.google.android.material.button.MaterialButton
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:id="@+id/mul"
                 android:layout_marginStart="5dp"
                 android:text="×"
@@ -235,7 +235,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sevenBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:backgroundTint="#1B262C"
                 android:text="7"
                 android:fontFamily="@font/ropasans_regular"
@@ -249,7 +249,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/eightBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
                 android:text="8"
@@ -264,7 +264,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/nineBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
                 android:text="9"
@@ -279,7 +279,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/plusBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#0F4C75"
                 android:text="+"
@@ -306,7 +306,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/fourBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:backgroundTint="#1B262C"
                 android:text="4"
                 android:fontFamily="@font/ropasans_regular"
@@ -320,7 +320,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/fiveBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
                 android:text="5"
@@ -335,7 +335,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sixBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
                 android:text="6"
@@ -350,7 +350,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/minusBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#0F4C75"
                 android:text="-"
@@ -377,7 +377,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/oneBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:backgroundTint="#1B262C"
                 android:text="1"
                 android:fontFamily="@font/ropasans_regular"
@@ -391,7 +391,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/twoBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
                 android:text="2"
@@ -406,7 +406,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/threeBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
                 android:text="3"
@@ -421,7 +421,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/modBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#0F4C75"
                 android:text="%"
@@ -448,7 +448,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/zeroBtn"
                 android:layout_width="180dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:backgroundTint="#1B262C"
                 android:text="0"
                 android:fontFamily="@font/ropasans_regular"
@@ -462,7 +462,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/dotBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
                 android:text="."
@@ -477,7 +477,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/equlBtn"
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#0F4C75"
                 android:text="="
