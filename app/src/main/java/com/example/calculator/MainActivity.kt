@@ -1,9 +1,13 @@
 package com.example.calculator
 
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.button.MaterialButton
 
 class MainActivity : AppCompatActivity() {
@@ -87,7 +91,7 @@ class MainActivity : AppCompatActivity() {
 
                 // Move equation up and show result down
                 fieldOne.setText(expression)
-                fieldTwo.setText("=${result.toString()}")
+                fieldTwo.setText("${result.toString()}")
 
             } catch (e: Exception) {
                 fieldTwo.setText("Error")

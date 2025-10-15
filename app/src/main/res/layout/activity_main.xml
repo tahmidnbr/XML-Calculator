@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#393E46"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:fitsSystemWindows="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/screenField"
@@ -64,18 +65,69 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/screenField">
+        app:layout_constraintTop_toBottomOf="@+id/screenField"
+        android:paddingHorizontal="10dp">
+
+        <!-- Vertical Guidelines at 25%, 50%, 75%, 100% -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/special"
             app:layout_constraintTop_toTopOf="parent"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="10dp">
+            android:paddingVertical="5dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.6" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline80"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8" />
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="60dp"
+                android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:id="@+id/sqrtBtn"
                 android:text="sqrt"
@@ -83,13 +135,13 @@
                 android:textStyle="bold"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/sinBtn"
+                app:layout_constraintEnd_toStartOf="@id/guideline20"
                 app:layout_constraintTop_toTopOf="parent"
                 app:cornerRadius="10dp"
                 android:backgroundTint="#3282B8"/>
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="60dp"
+                android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:id="@+id/sinBtn"
                 android:text="sin"
@@ -97,14 +149,14 @@
                 android:textStyle="bold"
                 android:textSize="15sp"
                 android:layout_marginStart="5dp"
-                app:layout_constraintStart_toEndOf="@+id/sqrtBtn"
-                app:layout_constraintEnd_toStartOf="@+id/cosBtn"
+                app:layout_constraintStart_toEndOf="@+id/guideline20"
+                app:layout_constraintEnd_toStartOf="@+id/guideline40"
                 app:layout_constraintTop_toTopOf="parent"
                 app:cornerRadius="10dp"
                 android:backgroundTint="#3282B8"/>
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="60dp"
+                android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:id="@+id/cosBtn"
                 android:text="cos"
@@ -112,14 +164,14 @@
                 android:textStyle="bold"
                 android:textSize="15sp"
                 android:layout_marginStart="5dp"
-                app:layout_constraintStart_toEndOf="@+id/sinBtn"
-                app:layout_constraintEnd_toStartOf="@id/tanBtn"
+                app:layout_constraintStart_toEndOf="@+id/guideline40"
+                app:layout_constraintEnd_toStartOf="@id/guideline60"
                 app:layout_constraintTop_toTopOf="parent"
                 app:cornerRadius="10dp"
                 android:backgroundTint="#3282B8"/>
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="60dp"
+                android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:id="@+id/tanBtn"
                 android:text="tan"
@@ -127,14 +179,14 @@
                 android:textStyle="bold"
                 android:textSize="15sp"
                 android:layout_marginStart="5dp"
-                app:layout_constraintStart_toEndOf="@id/cosBtn"
-                app:layout_constraintEnd_toStartOf="@+id/radBtn"
+                app:layout_constraintStart_toEndOf="@id/guideline60"
+                app:layout_constraintEnd_toStartOf="@+id/guideline80"
                 app:layout_constraintTop_toTopOf="parent"
                 app:cornerRadius="10dp"
                 android:backgroundTint="#3282B8"/>
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="60dp"
+                android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:id="@+id/radBtn"
                 android:text="rad"
@@ -142,24 +194,17 @@
                 android:textStyle="bold"
                 android:textSize="15sp"
                 android:layout_marginStart="5dp"
-                app:layout_constraintStart_toEndOf="@id/tanBtn"
+                app:layout_constraintStart_toEndOf="@id/guideline80"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:cornerRadius="10dp"
                 android:backgroundTint="#3282B8"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-<!--        first row-->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnRow1"
-            app:layout_constraintTop_toBottomOf="@id/special"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp">
+        <!--        first row-->
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:id="@+id/clr"
                 android:text="AC"
@@ -168,13 +213,13 @@
                 android:textSize="25sp"
                 android:backgroundTint="#1B262C"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/dlt"
+                app:layout_constraintTop_toBottomOf="@+id/special"
+                app:layout_constraintEnd_toStartOf="@id/guideline25"
                 app:cornerRadius="8dp"
                 />
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:id="@+id/dlt"
                 android:layout_marginStart="5dp"
@@ -183,13 +228,14 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 android:backgroundTint="#1B262C"
-                app:layout_constraintStart_toEndOf="@id/clr"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/div"
+                app:layout_constraintStart_toEndOf="@id/guideline25"
+                app:layout_constraintTop_toBottomOf="@+id/special"
+                app:layout_constraintEnd_toStartOf="@id/guideline50"
                 app:cornerRadius="8dp"
                 />
+
             <com.google.android.material.button.MaterialButton
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:id="@+id/div"
                 android:layout_marginStart="5dp"
@@ -198,13 +244,14 @@
                 android:textStyle="bold"
                 android:textSize="40sp"
                 android:backgroundTint="#0F4C75"
-                app:layout_constraintStart_toEndOf="@id/dlt"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline50"
+                app:layout_constraintTop_toBottomOf="@+id/special"
                 app:cornerRadius="8dp"
-                app:layout_constraintEnd_toStartOf="@id/mul"
+                app:layout_constraintEnd_toStartOf="@id/guideline75"
                 />
+
             <com.google.android.material.button.MaterialButton
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:id="@+id/mul"
                 android:layout_marginStart="5dp"
@@ -213,28 +260,18 @@
                 android:textStyle="bold"
                 android:textSize="40sp"
                 android:backgroundTint="#0F4C75"
-                app:layout_constraintStart_toEndOf="@id/div"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline75"
+                app:layout_constraintTop_toBottomOf="@+id/special"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:cornerRadius="8dp"
                 />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--        second row-->
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/btnRow2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            app:layout_constraintTop_toBottomOf="@id/btnRow1">
+        <!--        second row-->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sevenBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:backgroundTint="#1B262C"
                 android:text="7"
@@ -242,13 +279,13 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 app:cornerRadius="8dp"
-                app:layout_constraintEnd_toStartOf="@id/eightBtn"
+                app:layout_constraintEnd_toStartOf="@id/guideline25"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/clr" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/eightBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
@@ -257,13 +294,13 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 app:cornerRadius="8dp"
-                app:layout_constraintEnd_toStartOf="@id/nineBtn"
-                app:layout_constraintStart_toEndOf="@id/sevenBtn"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toStartOf="@id/guideline50"
+                app:layout_constraintStart_toEndOf="@id/guideline25"
+                app:layout_constraintTop_toBottomOf="@id/dlt" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/nineBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
@@ -272,13 +309,13 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 app:cornerRadius="8dp"
-                app:layout_constraintEnd_toStartOf="@id/plusBtn"
-                app:layout_constraintStart_toEndOf="@id/eightBtn"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toStartOf="@id/guideline75"
+                app:layout_constraintStart_toEndOf="@id/guideline50"
+                app:layout_constraintTop_toBottomOf="@id/div" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/plusBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#0F4C75"
@@ -288,24 +325,14 @@
                 android:textSize="40sp"
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/nineBtn"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@id/guideline75"
+                app:layout_constraintTop_toBottomOf="@id/mul" />
 
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--        third row-->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/btnRow3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            app:layout_constraintTop_toBottomOf="@id/btnRow2">
+        <!--        third row-->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/fourBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:backgroundTint="#1B262C"
                 android:text="4"
@@ -313,13 +340,13 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 app:cornerRadius="8dp"
-                app:layout_constraintEnd_toStartOf="@id/fiveBtn"
+                app:layout_constraintEnd_toStartOf="@id/guideline25"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/sevenBtn" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/fiveBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
@@ -328,13 +355,13 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 app:cornerRadius="8dp"
-                app:layout_constraintEnd_toStartOf="@id/sixBtn"
-                app:layout_constraintStart_toEndOf="@id/fourBtn"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toStartOf="@id/guideline50"
+                app:layout_constraintStart_toEndOf="@id/guideline25"
+                app:layout_constraintTop_toBottomOf="@id/eightBtn" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sixBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
@@ -343,13 +370,13 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 app:cornerRadius="8dp"
-                app:layout_constraintEnd_toStartOf="@id/minusBtn"
-                app:layout_constraintStart_toEndOf="@id/fiveBtn"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toStartOf="@id/guideline75"
+                app:layout_constraintStart_toEndOf="@id/guideline50"
+                app:layout_constraintTop_toBottomOf="@id/nineBtn" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/minusBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#0F4C75"
@@ -359,24 +386,14 @@
                 android:textSize="40sp"
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/sixBtn"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@id/guideline75"
+                app:layout_constraintTop_toBottomOf="@id/plusBtn" />
 
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--        fourth row-->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/btnRow4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            app:layout_constraintTop_toBottomOf="@id/btnRow3">
+        <!--        fourth row-->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/oneBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:backgroundTint="#1B262C"
                 android:text="1"
@@ -384,13 +401,13 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 app:cornerRadius="8dp"
-                app:layout_constraintEnd_toStartOf="@id/twoBtn"
+                app:layout_constraintEnd_toStartOf="@id/guideline25"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/fourBtn" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/twoBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
@@ -399,13 +416,13 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 app:cornerRadius="8dp"
-                app:layout_constraintEnd_toStartOf="@id/threeBtn"
-                app:layout_constraintStart_toEndOf="@id/oneBtn"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toStartOf="@id/guideline50"
+                app:layout_constraintStart_toEndOf="@id/guideline25"
+                app:layout_constraintTop_toBottomOf="@id/fiveBtn" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/threeBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
@@ -414,13 +431,13 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 app:cornerRadius="8dp"
-                app:layout_constraintEnd_toStartOf="@id/modBtn"
-                app:layout_constraintStart_toEndOf="@id/twoBtn"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toStartOf="@id/guideline75"
+                app:layout_constraintStart_toEndOf="@id/guideline50"
+                app:layout_constraintTop_toBottomOf="@id/sixBtn" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/modBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#0F4C75"
@@ -430,24 +447,14 @@
                 android:textSize="25sp"
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/threeBtn"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@id/guideline75"
+                app:layout_constraintTop_toBottomOf="@id/minusBtn" />
 
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--        fifth row-->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/btnRow5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            app:layout_constraintTop_toBottomOf="@id/btnRow4">
+        <!--        fifth row-->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/zeroBtn"
-                android:layout_width="180dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:backgroundTint="#1B262C"
                 android:text="0"
@@ -455,13 +462,13 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 app:cornerRadius="8dp"
-                app:layout_constraintEnd_toStartOf="@id/dotBtn"
+                app:layout_constraintEnd_toStartOf="@id/guideline50"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/oneBtn" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/dotBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#1B262C"
@@ -470,13 +477,13 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 app:cornerRadius="8dp"
-                app:layout_constraintEnd_toStartOf="@id/equlBtn"
-                app:layout_constraintStart_toEndOf="@id/zeroBtn"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toStartOf="@id/guideline75"
+                app:layout_constraintStart_toEndOf="@id/guideline50"
+                app:layout_constraintTop_toBottomOf="@id/threeBtn" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/equlBtn"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#0F4C75"
@@ -486,11 +493,9 @@
                 android:textSize="40sp"
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/dotBtn"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@id/guideline75"
+                app:layout_constraintTop_toBottomOf="@id/modBtn" />
 
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
