@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#393E46"
+    android:background="#222831"
     tools:context=".MainActivity"
     android:fitsSystemWindows="true">
 
@@ -13,12 +13,10 @@
         android:id="@+id/screenField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/buttonField">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:layout_width="match_parent"
@@ -66,7 +64,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/screenField"
-        android:paddingHorizontal="10dp">
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp">
 
         <!-- Vertical Guidelines at 25%, 50%, 75%, 100% -->
         <androidx.constraintlayout.widget.Guideline
@@ -138,7 +137,10 @@
                 app:layout_constraintEnd_toStartOf="@id/guideline20"
                 app:layout_constraintTop_toTopOf="parent"
                 app:cornerRadius="10dp"
-                android:backgroundTint="#3282B8"/>
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#393E46"
+                android:layout_marginVertical="10dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="0dp"
@@ -148,12 +150,14 @@
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
                 android:textSize="15sp"
-                android:layout_marginStart="5dp"
+                android:layout_marginEnd="10dp"
                 app:layout_constraintStart_toEndOf="@+id/guideline20"
                 app:layout_constraintEnd_toStartOf="@+id/guideline40"
                 app:layout_constraintTop_toTopOf="parent"
                 app:cornerRadius="10dp"
-                android:backgroundTint="#3282B8"/>
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#393E46"
+                android:layout_marginVertical="10dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="0dp"
@@ -163,12 +167,13 @@
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
                 android:textSize="15sp"
-                android:layout_marginStart="5dp"
                 app:layout_constraintStart_toEndOf="@+id/guideline40"
                 app:layout_constraintEnd_toStartOf="@id/guideline60"
                 app:layout_constraintTop_toTopOf="parent"
                 app:cornerRadius="10dp"
-                android:backgroundTint="#3282B8"/>
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#393E46"
+                android:layout_marginVertical="10dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="0dp"
@@ -178,12 +183,14 @@
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
                 android:textSize="15sp"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintStart_toEndOf="@id/guideline60"
                 app:layout_constraintEnd_toStartOf="@+id/guideline80"
                 app:layout_constraintTop_toTopOf="parent"
                 app:cornerRadius="10dp"
-                android:backgroundTint="#3282B8"/>
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#393E46"
+                android:layout_marginVertical="10dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="0dp"
@@ -193,12 +200,14 @@
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
                 android:textSize="15sp"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintStart_toEndOf="@id/guideline80"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:cornerRadius="10dp"
-                android:backgroundTint="#3282B8"/>
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#393E46"
+                android:layout_marginVertical="10dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
         <!--        first row-->
@@ -211,43 +220,47 @@
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
                 android:textSize="25sp"
-                android:backgroundTint="#1B262C"
+                android:backgroundTint="#00ADB5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/special"
                 app:layout_constraintEnd_toStartOf="@id/guideline25"
                 app:cornerRadius="8dp"
+                android:layout_marginVertical="10dp"
+                android:layout_marginEnd="5dp"
                 />
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:id="@+id/dlt"
-                android:layout_marginStart="5dp"
                 android:text="C"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
                 android:textSize="25sp"
-                android:backgroundTint="#1B262C"
+                android:backgroundTint="#393E46"
                 app:layout_constraintStart_toEndOf="@id/guideline25"
                 app:layout_constraintTop_toBottomOf="@+id/special"
                 app:layout_constraintEnd_toStartOf="@id/guideline50"
                 app:cornerRadius="8dp"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="5dp"
                 />
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:id="@+id/div"
-                android:layout_marginStart="5dp"
                 android:text="÷"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
                 android:textSize="40sp"
-                android:backgroundTint="#0F4C75"
+                android:backgroundTint="#393E46"
                 app:layout_constraintStart_toEndOf="@id/guideline50"
                 app:layout_constraintTop_toBottomOf="@+id/special"
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline75"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="5dp"
                 />
 
             <com.google.android.material.button.MaterialButton
@@ -259,11 +272,12 @@
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
                 android:textSize="40sp"
-                android:backgroundTint="#0F4C75"
+                android:backgroundTint="#393E46"
                 app:layout_constraintStart_toEndOf="@id/guideline75"
                 app:layout_constraintTop_toBottomOf="@+id/special"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:cornerRadius="8dp"
+                android:layout_marginVertical="10dp"
                 />
 
 
@@ -273,7 +287,7 @@
                 android:id="@+id/sevenBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:backgroundTint="#1B262C"
+                android:backgroundTint="#393E46"
                 android:text="7"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -281,14 +295,15 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline25"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/clr" />
+                app:layout_constraintTop_toBottomOf="@id/clr"
+                android:layout_marginVertical="10dp"
+                android:layout_marginEnd="5dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/eightBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:layout_marginStart="5dp"
-                android:backgroundTint="#1B262C"
+                android:backgroundTint="#393E46"
                 android:text="8"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -296,14 +311,15 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline50"
                 app:layout_constraintStart_toEndOf="@id/guideline25"
-                app:layout_constraintTop_toBottomOf="@id/dlt" />
+                app:layout_constraintTop_toBottomOf="@id/dlt"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="5dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/nineBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:layout_marginStart="5dp"
-                android:backgroundTint="#1B262C"
+                android:backgroundTint="#393E46"
                 android:text="9"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -311,14 +327,16 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline75"
                 app:layout_constraintStart_toEndOf="@id/guideline50"
-                app:layout_constraintTop_toBottomOf="@id/div" />
+                app:layout_constraintTop_toBottomOf="@id/div"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="5dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/plusBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
-                android:backgroundTint="#0F4C75"
+                android:backgroundTint="#393E46"
                 android:text="+"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -326,7 +344,8 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/guideline75"
-                app:layout_constraintTop_toBottomOf="@id/mul" />
+                app:layout_constraintTop_toBottomOf="@id/mul"
+                android:layout_marginVertical="10dp"/>
 
         <!--        third row-->
 
@@ -334,7 +353,7 @@
                 android:id="@+id/fourBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:backgroundTint="#1B262C"
+                android:backgroundTint="#393E46"
                 android:text="4"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -342,14 +361,15 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline25"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sevenBtn" />
+                app:layout_constraintTop_toBottomOf="@+id/sevenBtn"
+                android:layout_marginVertical="10dp"
+                android:layout_marginEnd="5dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/fiveBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:layout_marginStart="5dp"
-                android:backgroundTint="#1B262C"
+                android:backgroundTint="#393E46"
                 android:text="5"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -357,14 +377,15 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline50"
                 app:layout_constraintStart_toEndOf="@id/guideline25"
-                app:layout_constraintTop_toBottomOf="@id/eightBtn" />
+                app:layout_constraintTop_toBottomOf="@id/eightBtn"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="5dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sixBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:layout_marginStart="5dp"
-                android:backgroundTint="#1B262C"
+                android:backgroundTint="#393E46"
                 android:text="6"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -372,14 +393,16 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline75"
                 app:layout_constraintStart_toEndOf="@id/guideline50"
-                app:layout_constraintTop_toBottomOf="@id/nineBtn" />
+                app:layout_constraintTop_toBottomOf="@id/nineBtn"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="5dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/minusBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
-                android:backgroundTint="#0F4C75"
+                android:backgroundTint="#393E46"
                 android:text="-"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -387,7 +410,8 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/guideline75"
-                app:layout_constraintTop_toBottomOf="@id/plusBtn" />
+                app:layout_constraintTop_toBottomOf="@id/plusBtn"
+                android:layout_marginVertical="10dp"/>
 
         <!--        fourth row-->
 
@@ -395,7 +419,7 @@
                 android:id="@+id/oneBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:backgroundTint="#1B262C"
+                android:backgroundTint="#393E46"
                 android:text="1"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -403,14 +427,15 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline25"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fourBtn" />
+                app:layout_constraintTop_toBottomOf="@+id/fourBtn"
+                android:layout_marginVertical="10dp"
+                android:layout_marginEnd="5dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/twoBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:layout_marginStart="5dp"
-                android:backgroundTint="#1B262C"
+                android:backgroundTint="#393E46"
                 android:text="2"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -418,14 +443,15 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline50"
                 app:layout_constraintStart_toEndOf="@id/guideline25"
-                app:layout_constraintTop_toBottomOf="@id/fiveBtn" />
+                app:layout_constraintTop_toBottomOf="@id/fiveBtn"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="5dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/threeBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:layout_marginStart="5dp"
-                android:backgroundTint="#1B262C"
+                android:backgroundTint="#393E46"
                 android:text="3"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -433,14 +459,16 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline75"
                 app:layout_constraintStart_toEndOf="@id/guideline50"
-                app:layout_constraintTop_toBottomOf="@id/sixBtn" />
+                app:layout_constraintTop_toBottomOf="@id/sixBtn"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="5dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/modBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
-                android:backgroundTint="#0F4C75"
+                android:backgroundTint="#393E46"
                 android:text="%"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -448,7 +476,8 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/guideline75"
-                app:layout_constraintTop_toBottomOf="@id/minusBtn" />
+                app:layout_constraintTop_toBottomOf="@id/minusBtn"
+                android:layout_marginVertical="10dp"/>
 
         <!--        fifth row-->
 
@@ -456,7 +485,7 @@
                 android:id="@+id/zeroBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:backgroundTint="#1B262C"
+                android:backgroundTint="#393E46"
                 android:text="0"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -464,14 +493,15 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline50"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/oneBtn" />
+                app:layout_constraintTop_toBottomOf="@id/oneBtn"
+                android:layout_marginVertical="10dp"
+                android:layout_marginEnd="5dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/dotBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:layout_marginStart="5dp"
-                android:backgroundTint="#1B262C"
+                android:backgroundTint="#393E46"
                 android:text="."
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -479,14 +509,16 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline75"
                 app:layout_constraintStart_toEndOf="@id/guideline50"
-                app:layout_constraintTop_toBottomOf="@id/threeBtn" />
+                app:layout_constraintTop_toBottomOf="@id/threeBtn"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="5dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/equlBtn"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
-                android:backgroundTint="#0F4C75"
+                android:backgroundTint="#393E46"
                 android:text="="
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
@@ -494,7 +526,8 @@
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/guideline75"
-                app:layout_constraintTop_toBottomOf="@id/modBtn" />
+                app:layout_constraintTop_toBottomOf="@id/modBtn"
+                android:layout_marginVertical="10dp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
