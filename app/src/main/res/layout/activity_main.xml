@@ -10,49 +10,120 @@
     android:fitsSystemWindows="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/navScroll"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginVertical="40dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bmi"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/scales"
+            app:backgroundTint="#EEEEEE"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/calculator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/calculator"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bmi"
+            app:layout_constraintEnd_toStartOf="@+id/conv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/cal"
+            app:backgroundTint="#EEEEEE"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/conv"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/calculator"
+            app:layout_constraintEnd_toStartOf="@+id/binary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/img"
+            app:backgroundTint="#EEEEEE"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/binary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/conv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:backgroundTint="#EEEEEE"
+            android:background="@drawable/img_1"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/screenField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/navScroll"
+        android:paddingHorizontal="10dp">
 
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@android:color/transparent"
-            android:clickable="false"
-            android:focusable="true"
-            android:inputType="none"
-            android:textSize="30sp"
-            android:textAlignment="viewEnd"
-            android:textColor="#81FFFFFF"
-            android:fontFamily="@font/ropasans_regular"
-            android:id="@+id/editOne"
-            android:paddingHorizontal="10dp"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/editOneLayout"
+            app:boxBackgroundMode="none"
+            app:hintEnabled="false">
 
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/transparent"
+                android:textColor="#81FFFFFF"
+                android:textColorHint="#eeeeee"
+                android:clickable="true"
+                android:focusable="true"
+                android:inputType="none"
+                android:textSize="40sp"
+                android:fontFamily="@font/ropasans_regular"
+                android:id="@+id/editOne"
+                android:paddingVertical="10dp"
+                android:gravity="end"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@android:color/transparent"
-            android:hint="0"
-            android:textColorHint="@color/white"
-            android:clickable="false"
-            android:focusable="true"
-            android:inputType="none"
-            android:textSize="60sp"
-            android:textAlignment="viewEnd"
-            android:textColor="@color/white"
-            android:fontFamily="@font/ropasans_regular"
-            android:id="@+id/editTwo"
-            android:paddingHorizontal="10dp"
-            app:layout_constraintTop_toBottomOf="@id/editOne"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/editOneLayout"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/editTwoLayout"
+            app:boxBackgroundMode="none"
+            app:hintEnabled="false"
+            android:layout_marginVertical="40dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/white"
+                android:hint="0"
+                android:textColorHint="#eeeeee"
+                android:clickable="true"
+                android:focusable="true"
+                android:inputType="none"
+                android:textSize="60sp"
+                android:fontFamily="@font/ropasans_regular"
+                android:id="@+id/editTwo"
+                android:paddingVertical="10dp"
+                android:gravity="end"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -129,10 +200,10 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:id="@+id/sqrtBtn"
-                android:text="sqrt"
+                android:text="√"
                 android:fontFamily="@font/ropasans_regular"
                 android:textStyle="bold"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/guideline20"
                 app:layout_constraintTop_toTopOf="parent"

@@ -1,5 +1,7 @@
 package com.example.calculator
 
+import android.content.Intent
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -8,75 +10,75 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.calculator.databinding.ActivityMainBinding
 import com.google.android.material.button.MaterialButton
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val fieldOne = findViewById<EditText>(R.id.editOne)
-        val fieldTwo  =  findViewById<EditText>(R.id.editTwo)
+        val defaultColor = ColorStateList.valueOf(Color.parseColor("#EEEEEE"))
+        val activeColor = ColorStateList.valueOf(Color.parseColor("#00ADB5"))
 
-        val zeroBtn  = findViewById<MaterialButton>(R.id.zeroBtn)
-        val btnOne =  findViewById<MaterialButton>(R.id.oneBtn)
-        val btnTwo =  findViewById<MaterialButton>(R.id.twoBtn)
-        val btnThree =  findViewById<MaterialButton>(R.id.threeBtn)
-        val btnFour =  findViewById<MaterialButton>(R.id.fourBtn)
-        val btnFive =  findViewById<MaterialButton>(R.id.fiveBtn)
-        val btnSix =  findViewById<MaterialButton>(R.id.sixBtn)
-        val btnSeven =  findViewById<MaterialButton>(R.id.sevenBtn)
-        val btnEight =  findViewById<MaterialButton>(R.id.eightBtn)
-        val btnNine =  findViewById<MaterialButton>(R.id.nineBtn)
+        val calculatorButton = findViewById<MaterialButton>(R.id.calculator)
+        val bmiButton = findViewById<MaterialButton>(R.id.bmi)
+        val convButton = findViewById<MaterialButton>(R.id.conv)
+        val binaryButton = findViewById<MaterialButton>(R.id.binary)
 
-        val plusBtn = findViewById<MaterialButton>(R.id.plusBtn)
-        val minusBtn = findViewById<MaterialButton>(R.id.minusBtn)
-        val mulBtn = findViewById<MaterialButton>(R.id.mul)
-        val divBtn = findViewById<MaterialButton>(R.id.div)
-        val modBtn = findViewById<MaterialButton>(R.id.modBtn)
+        calculatorButton.backgroundTintList = activeColor
+        bmiButton.backgroundTintList = defaultColor
+        convButton.backgroundTintList = defaultColor
+        binaryButton.backgroundTintList = defaultColor
 
+        binding.bmi.setOnClickListener {
+            startActivity(Intent(this@MainActivity, BMIActivity::class.java))
+        }
 
-        val clrBtn = findViewById<MaterialButton>(R.id.clr)
-        val dltBtn = findViewById<MaterialButton>(R.id.dlt)
+        val fieldOne = binding.editOne
+        val fieldTwo  =  binding.editTwo
 
-        val equalBtn = findViewById<MaterialButton>(R.id.equlBtn)
+        val clrBtn = binding.clr
+        val dltBtn = binding.dlt
+        val equalBtn = binding.equlBtn
 
+        //Display pressed buttons
         val listner = {button: MaterialButton ->
             fieldTwo.append(button.text)
         }
 
-        zeroBtn.setOnClickListener { listner(zeroBtn) }
-        btnOne.setOnClickListener { listner(btnOne) }
-        btnTwo.setOnClickListener { listner(btnTwo) }
-        btnThree.setOnClickListener { listner(btnThree) }
-        btnFour.setOnClickListener { listner(btnFour) }
-        btnFive.setOnClickListener { listner(btnFive) }
-        btnSix.setOnClickListener { listner(btnSix) }
-        btnSeven.setOnClickListener { listner(btnSeven) }
-        btnEight.setOnClickListener { listner(btnEight) }
-        btnNine.setOnClickListener { listner(btnNine) }
+        val buttons = listOf(
+            binding.zeroBtn, binding.oneBtn, binding.twoBtn,
+            binding.threeBtn, binding.fourBtn, binding.fiveBtn,
+            binding.sixBtn, binding.sevenBtn, binding.eightBtn, binding.nineBtn,
+            binding.plusBtn, binding.minusBtn, binding.mul, binding.div, binding.modBtn, binding.dotBtn
+        )
 
-        plusBtn.setOnClickListener { listner(plusBtn) }
-        minusBtn.setOnClickListener { listner(minusBtn) }
-        mulBtn.setOnClickListener { listner(mulBtn) }
-        divBtn.setOnClickListener { listner(divBtn) }
-        modBtn.setOnClickListener { listner(modBtn) }
+        for(btn in buttons){
+            btn.setOnClickListener { listner(btn) }
+        }
 
+        //Clear last element
         dltBtn.setOnClickListener {
             val text = fieldTwo.text.toString()
             if (text.isNotEmpty()) {
                 fieldTwo.setText(text.substring(0, text.length - 1))
-                fieldTwo.setSelection(fieldTwo.text.length) // keeps cursor at end
+                fieldTwo.setSelection(fieldTwo.text!!.length) // keeps cursor at end
             }
         }
 
+        //Clear all elements both text fields
         clrBtn.setOnClickListener {
             fieldTwo.setText("")
             fieldOne.setText("")
         }
 
-// Handle "=" button click
+
+        //Operation of equal btn
         equalBtn.setOnClickListener {
             val expression = fieldTwo.text.toString()
 
@@ -91,7 +93,7 @@ class MainActivity : AppCompatActivity() {
 
                 // Move equation up and show result down
                 fieldOne.setText(expression)
-                fieldTwo.setText("${result.toString()}")
+                fieldTwo.setText("${result}")
 
             } catch (e: Exception) {
                 fieldTwo.setText("Error")

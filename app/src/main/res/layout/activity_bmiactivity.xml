@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222831"
+    android:fitsSystemWindows="true"
+    tools:context=".BMIActivity">
+
+<!--    NAV BUTTOONS-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/navScroll"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginVertical="40dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bmi"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/scales"
+            app:backgroundTint="#EEEEEE"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/calculator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/calculator"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bmi"
+            app:layout_constraintEnd_toStartOf="@+id/conv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/cal"
+            app:backgroundTint="#EEEEEE"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/conv"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/calculator"
+            app:layout_constraintEnd_toStartOf="@+id/binary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/img"
+            app:backgroundTint="#EEEEEE"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/binary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/conv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:backgroundTint="#EEEEEE"
+            android:background="@drawable/img_1"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--    SCREEN FIELDS-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/screenField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/navScroll"
+        android:paddingHorizontal="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editOneLayout"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:weightSum="2">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:id="@+id/oneLayout"
+                android:layout_weight="1"
+                android:textColorHint="#52EEEEEE"
+                app:boxStrokeColor="#00ADB5"
+                app:hintTextColor="#00ADB5"
+                app:cursorColor="#00ADB5">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/weightField"
+                    android:clickable="true"
+                    android:cursorVisible="true"
+                    android:focusable="true"
+                    android:inputType="numberDecimal"
+                    android:textColor="#EEEEEE"
+                    android:fontFamily="@font/ropasans_regular"
+                    android:hint="Weight (kg)"
+                    android:layout_marginHorizontal="5dp"
+                    android:textSize="20sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:id="@+id/twoLayout"
+                android:layout_weight="1"
+                android:textColorHint="#52EEEEEE"
+                app:boxStrokeColor="#00ADB5"
+                app:hintTextColor="#00ADB5"
+                app:cursorColor="#00ADB5">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/heightField"
+                    android:clickable="true"
+                    android:cursorVisible="true"
+                    android:focusable="true"
+                    android:inputType="numberDecimal"
+                    android:textColor="#EEEEEE"
+                    android:fontFamily="@font/ropasans_regular"
+                    android:layout_marginHorizontal="5dp"
+                    android:hint="Height (cm)"
+                    android:textSize="20sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/editOneLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/editTwoLayout"
+            app:boxBackgroundMode="none"
+            android:layout_marginHorizontal="5dp"
+            app:hintEnabled="false"
+            android:layout_marginVertical="40dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/white"
+                android:hint="0"
+                android:textColorHint="#eeeeee"
+                android:clickable="true"
+                android:cursorVisible="true"
+                android:focusable="true"
+                android:inputType="none"
+                android:textSize="60sp"
+                android:fontFamily="@font/ropasans_regular"
+                android:id="@+id/editTwo"
+                android:paddingVertical="10dp"
+                android:gravity="end"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    INPUT BUTTONS-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttonField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/screenField"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp">
+
+        <!-- Vertical Guidelines at 25%, 50%, 75%, 100% -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <!--        first row-->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sevenBtn"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#393E46"
+            android:text="7"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/eightBtn"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#393E46"
+            android:text="8"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline50"
+            app:layout_constraintStart_toEndOf="@id/guideline25"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nineBtn"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#393E46"
+            android:text="9"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline75"
+            app:layout_constraintStart_toEndOf="@id/guideline50"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/acBtn"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="5dp"
+            android:text="AC"
+            android:backgroundTint="#00ADB5"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline75"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        2nd row-->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fourBtn"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#393E46"
+            android:text="4"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sevenBtn"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fiveBtn"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#393E46"
+            android:text="5"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline50"
+            app:layout_constraintStart_toEndOf="@id/guideline25"
+            app:layout_constraintTop_toBottomOf="@id/eightBtn"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sixBtn"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#393E46"
+            android:text="6"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline75"
+            app:layout_constraintStart_toEndOf="@id/guideline50"
+            app:layout_constraintTop_toBottomOf="@id/nineBtn"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="5dp"/>
+
+
+        <!--        3rd row-->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/oneBtn"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#393E46"
+            android:text="1"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourBtn"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/twoBtn"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#393E46"
+            android:text="2"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline50"
+            app:layout_constraintStart_toEndOf="@id/guideline25"
+            app:layout_constraintTop_toBottomOf="@id/fiveBtn"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/threeBtn"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#393E46"
+            android:text="3"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline75"
+            app:layout_constraintStart_toEndOf="@id/guideline50"
+            app:layout_constraintTop_toBottomOf="@id/sixBtn"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/clrBtn"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="#393E46"
+            android:text="C"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline75"
+            app:layout_constraintTop_toBottomOf="@id/acBtn"
+            android:layout_marginVertical="10dp"/>
+
+        <!--        4th row-->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/zeroBtn"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#393E46"
+            android:text="0"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/oneBtn"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dotBtn"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#393E46"
+            android:text="."
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline75"
+            app:layout_constraintStart_toEndOf="@id/guideline50"
+            app:layout_constraintTop_toBottomOf="@id/threeBtn"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/equlBtn"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="#393E46"
+            android:text="="
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline75"
+            app:layout_constraintTop_toBottomOf="@id/clrBtn"
+            android:layout_marginVertical="10dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
