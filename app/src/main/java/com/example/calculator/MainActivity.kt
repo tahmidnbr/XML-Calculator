@@ -5,6 +5,7 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,19 +22,15 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        window.apply {
+            decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+            navigationBarColor = Color.TRANSPARENT
+        }
 
-        val defaultColor = ColorStateList.valueOf(Color.parseColor("#EEEEEE"))
         val activeColor = ColorStateList.valueOf(Color.parseColor("#00ADB5"))
 
-        val calculatorButton = findViewById<MaterialButton>(R.id.calculator)
-        val bmiButton = findViewById<MaterialButton>(R.id.bmi)
-        val convButton = findViewById<MaterialButton>(R.id.conv)
-        val binaryButton = findViewById<MaterialButton>(R.id.binary)
-
-        calculatorButton.backgroundTintList = activeColor
-        bmiButton.backgroundTintList = defaultColor
-        convButton.backgroundTintList = defaultColor
-        binaryButton.backgroundTintList = defaultColor
+        binding.calculator.backgroundTintList = activeColor
 
         binding.bmi.setOnClickListener {
             startActivity(Intent(this@MainActivity, BMIActivity::class.java))

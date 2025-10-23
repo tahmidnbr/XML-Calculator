@@ -37,8 +37,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/navScroll"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/topGuide"
-        android:layout_marginVertical="8dp">
+        app:layout_constraintBottom_toTopOf="@id/topGuide">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bmi"
@@ -236,7 +235,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sevenBtn"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginEnd="5dp"
             android:backgroundTint="#393E46"
             android:fontFamily="@font/ropasans_regular"
@@ -251,7 +250,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/eightBtn"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginHorizontal="5dp"
             android:backgroundTint="#393E46"
             android:fontFamily="@font/ropasans_regular"
@@ -266,7 +265,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/nineBtn"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginHorizontal="5dp"
             android:backgroundTint="#393E46"
             android:fontFamily="@font/ropasans_regular"
@@ -281,7 +280,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/acBtn"
             android:layout_width="0dp"
-            android:layout_height="170dp"
+            android:layout_height="160dp"
             android:layout_marginStart="5dp"
             android:backgroundTint="#00ADB5"
             android:fontFamily="@font/ropasans_regular"
@@ -298,7 +297,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/fourBtn"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginVertical="10dp"
             android:layout_marginEnd="5dp"
             android:backgroundTint="#393E46"
@@ -314,7 +313,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/fiveBtn"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginHorizontal="5dp"
             android:layout_marginVertical="10dp"
             android:backgroundTint="#393E46"
@@ -330,7 +329,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sixBtn"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginHorizontal="5dp"
             android:layout_marginVertical="10dp"
             android:backgroundTint="#393E46"
@@ -348,7 +347,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/oneBtn"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginVertical="10dp"
             android:layout_marginEnd="5dp"
             android:backgroundTint="#393E46"
@@ -364,7 +363,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/twoBtn"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginHorizontal="5dp"
             android:layout_marginVertical="10dp"
             android:backgroundTint="#393E46"
@@ -380,7 +379,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/threeBtn"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginHorizontal="5dp"
             android:layout_marginVertical="10dp"
             android:backgroundTint="#393E46"
@@ -396,7 +395,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/clrBtn"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginVertical="10dp"
             android:layout_marginStart="5dp"
             android:backgroundTint="#393E46"
@@ -414,7 +413,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/zeroBtn"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginVertical="10dp"
             android:layout_marginEnd="5dp"
             android:backgroundTint="#393E46"
@@ -430,7 +429,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/dotBtn"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginHorizontal="5dp"
             android:layout_marginVertical="10dp"
             android:backgroundTint="#393E46"
@@ -446,7 +445,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/equlBtn"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginVertical="10dp"
             android:layout_marginStart="5dp"
             android:backgroundTint="#393E46"

@@ -46,6 +46,7 @@ class BMIActivity : AppCompatActivity() {
         val weight = binding.weightField
         val height = binding.heightField
         val fieldTwo  =  binding.editTwo
+
         fieldTwo.showSoftInputOnFocus = false
 
         weight.apply {
@@ -89,37 +90,13 @@ class BMIActivity : AppCompatActivity() {
             if (wTXT.isEmpty() ||  hTXT.isEmpty()){
                 Toast.makeText(this, "One or more inputfields are empty!", LENGTH_SHORT).show()
             }else{
-                val w = wTXT.toDouble()
-                val h = hTXT.toDouble()
-                val bmi = w /((h/100.0)*(h/100.0))
-                val bmiRounded = "%.2f".format(bmi)
-                binding.editTwo.setText(bmiRounded)
-
-                val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-                prefs.edit().apply{
-                    putString(KEY_ONE, bmiRounded)
-                    putString(KEY_TWO,  wTXT)
-                    putString(KEY_THREE, hTXT)
-                    apply()
-                }
+                equal(wTXT, hTXT)
             }
         }
 
-        binding.acBtn.setOnClickListener {
-            weight.setText("")
-            height.setText("")
-            binding.editTwo.setText("0")
-        }
+        binding.acBtn.setOnClickListener {ac()}
 
-        binding.clrBtn.setOnClickListener {
-            activeField?.let { field ->
-                val currentText = field.text?.toString() ?: ""
-                if (currentText.isNotEmpty()) {
-                    field.setText(currentText.dropLast(1))
-                    field.setSelection(field.text?.length ?: 0) // move cursor to end
-                }
-            }
-        }
+        binding.clrBtn.setOnClickListener { clear() }
     }
 
     private fun insertText(value: String) {
@@ -144,6 +121,38 @@ class BMIActivity : AppCompatActivity() {
             binding.heightField.setText(txt2)
         }
 
+    }
+
+    private fun ac(){
+        binding.weightField.setText("")
+        binding.heightField.setText("")
+        binding.editTwo.setText("0")
+    }
+
+    private fun clear(){
+        activeField?.let { field ->
+            val currentText = field.text?.toString() ?: ""
+            if (currentText.isNotEmpty()) {
+                field.setText(currentText.dropLast(1))
+                field.setSelection(field.text?.length ?: 0) // move cursor to end
+            }
+        }
+    }
+
+    private fun equal(w: String, h: String){
+        val weight = w.toDouble()
+        val height = h.toDouble()
+        val bmi = weight /((height/100.0)*(height/100.0))
+        val bmiRounded = "%.2f".format(bmi)
+        binding.editTwo.setText(bmiRounded)
+
+        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        prefs.edit().apply{
+            putString(KEY_ONE, bmiRounded)
+            putString(KEY_TWO,  w)
+            putString(KEY_THREE, h)
+            apply()
+        }
     }
 
 }
