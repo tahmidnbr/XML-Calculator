@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#222831"
     android:fitsSystemWindows="true"
-    tools:context=".BMIActivity">
+    tools:context=".BmiFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/topGuide"
@@ -32,58 +32,9 @@
 
 
     <!--    NAV BUTTOONS-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/navScroll"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/topGuide">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/bmi"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/scales"
-            app:backgroundTint="#EEEEEE"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/calculator"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:id="@+id/calculator"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/bmi"
-            app:layout_constraintEnd_toStartOf="@+id/conv"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:background="@drawable/cal"
-            app:backgroundTint="#EEEEEE"/>
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:id="@+id/conv"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/calculator"
-            app:layout_constraintEnd_toStartOf="@+id/binary"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:background="@drawable/img"
-            app:backgroundTint="#EEEEEE"/>
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:id="@+id/binary"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/conv"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:backgroundTint="#EEEEEE"
-            android:background="@drawable/img_1"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-<!--    SCREEN FIELDS-->
+    <!--    SCREEN FIELDS-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/screenField"
         android:layout_width="match_parent"
@@ -194,7 +145,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--    INPUT BUTTONS-->
+    <!--    INPUT BUTTONS-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/buttonField"

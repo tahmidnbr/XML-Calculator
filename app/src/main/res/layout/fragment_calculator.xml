@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222831"
+    tools:context=".CalculatorFragment"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/midGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/screenField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topGuide"
+        app:layout_constraintBottom_toTopOf="@id/midGuide"
+        android:paddingHorizontal="10dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/editOneLayout"
+            app:boxBackgroundMode="none"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/transparent"
+                android:textColor="#81FFFFFF"
+                android:textColorHint="#eeeeee"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="none"
+                android:textSize="40sp"
+                android:fontFamily="@font/ropasans_regular"
+                android:id="@+id/editOne"
+                android:paddingVertical="10dp"
+                android:gravity="end"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/editOneLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/editTwoLayout"
+            app:boxBackgroundMode="none"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/white"
+                android:hint="0"
+                android:textColorHint="#eeeeee"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="none"
+                android:textSize="60sp"
+                android:fontFamily="@font/ropasans_regular"
+                android:id="@+id/editTwo"
+                android:paddingVertical="10dp"
+                android:gravity="end"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttonField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/midGuide"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp">
+
+        <!-- Vertical Guidelines at 25%, 50%, 75%, 100% -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/special"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.6" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline80"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:id="@+id/sqrtBtn"
+                android:text="√"
+                android:fontFamily="@font/ropasans_regular"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline20"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cornerRadius="10dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#393E46"
+                android:layout_marginVertical="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:id="@+id/sinBtn"
+                android:text="("
+                android:fontFamily="@font/ropasans_regular"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintStart_toEndOf="@+id/guideline20"
+                app:layout_constraintEnd_toStartOf="@+id/guideline40"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cornerRadius="10dp"
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#393E46"
+                android:layout_marginVertical="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:id="@+id/cosBtn"
+                android:text=")"
+                android:fontFamily="@font/ropasans_regular"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/guideline40"
+                app:layout_constraintEnd_toStartOf="@id/guideline60"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cornerRadius="10dp"
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#393E46"
+                android:layout_marginVertical="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:id="@+id/tanBtn"
+                android:text="π"
+                android:fontFamily="@font/ropasans_regular"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/guideline60"
+                app:layout_constraintEnd_toStartOf="@+id/guideline80"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cornerRadius="10dp"
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#393E46"
+                android:layout_marginVertical="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:id="@+id/radBtn"
+                android:text="rad"
+                android:fontFamily="@font/ropasans_regular"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/guideline80"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cornerRadius="10dp"
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#393E46"
+                android:layout_marginVertical="10dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--        first row-->
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:id="@+id/clr"
+            android:text="AC"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:backgroundTint="#00ADB5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/special"
+            app:layout_constraintEnd_toStartOf="@id/guideline25"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginEnd="5dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:id="@+id/dlt"
+            android:text="C"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:backgroundTint="#393E46"
+            app:layout_constraintStart_toEndOf="@id/guideline25"
+            app:layout_constraintTop_toBottomOf="@+id/special"
+            app:layout_constraintEnd_toStartOf="@id/guideline50"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="5dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:id="@+id/div"
+            android:text="÷"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:backgroundTint="#393E46"
+            app:layout_constraintStart_toEndOf="@id/guideline50"
+            app:layout_constraintTop_toBottomOf="@+id/special"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline75"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="5dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:id="@+id/mul"
+            android:layout_marginStart="5dp"
+            android:text="×"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:backgroundTint="#393E46"
+            app:layout_constraintStart_toEndOf="@id/guideline75"
+            app:layout_constraintTop_toBottomOf="@+id/special"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            />
+
+
+        <!--        second row-->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sevenBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#393E46"
+            android:text="7"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clr"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginEnd="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/eightBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#393E46"
+            android:text="8"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline50"
+            app:layout_constraintStart_toEndOf="@id/guideline25"
+            app:layout_constraintTop_toBottomOf="@id/dlt"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nineBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#393E46"
+            android:text="9"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline75"
+            app:layout_constraintStart_toEndOf="@id/guideline50"
+            app:layout_constraintTop_toBottomOf="@id/div"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/plusBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="#393E46"
+            android:text="+"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline75"
+            app:layout_constraintTop_toBottomOf="@id/mul"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"/>
+
+        <!--        third row-->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fourBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#393E46"
+            android:text="4"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sevenBtn"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginEnd="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fiveBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#393E46"
+            android:text="5"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline50"
+            app:layout_constraintStart_toEndOf="@id/guideline25"
+            app:layout_constraintTop_toBottomOf="@id/eightBtn"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sixBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#393E46"
+            android:text="6"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline75"
+            app:layout_constraintStart_toEndOf="@id/guideline50"
+            app:layout_constraintTop_toBottomOf="@id/nineBtn"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/minusBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="#393E46"
+            android:text="-"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline75"
+            app:layout_constraintTop_toBottomOf="@id/plusBtn"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp" />
+
+        <!--        fourth row-->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/oneBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#393E46"
+            android:text="1"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourBtn"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginEnd="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/twoBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#393E46"
+            android:text="2"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline50"
+            app:layout_constraintStart_toEndOf="@id/guideline25"
+            app:layout_constraintTop_toBottomOf="@id/fiveBtn"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/threeBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#393E46"
+            android:text="3"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline75"
+            app:layout_constraintStart_toEndOf="@id/guideline50"
+            app:layout_constraintTop_toBottomOf="@id/sixBtn"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/modBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="#393E46"
+            android:text="%"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline75"
+            app:layout_constraintTop_toBottomOf="@id/minusBtn"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"/>
+
+        <!--        fifth row-->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/zeroBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#393E46"
+            android:text="0"
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/oneBtn"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginEnd="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dotBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#393E46"
+            android:text="."
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline75"
+            app:layout_constraintStart_toEndOf="@id/guideline50"
+            app:layout_constraintTop_toBottomOf="@id/threeBtn"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/equlBtn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="#393E46"
+            android:text="="
+            android:fontFamily="@font/ropasans_regular"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline75"
+            app:layout_constraintTop_toBottomOf="@id/modBtn"
+            app:cornerRadius="12dp"
+            android:layout_marginVertical="5dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

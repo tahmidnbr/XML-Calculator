@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_cal"
+        android:icon="@drawable/cal"
+        android:iconTint="@color/white"
+        android:title="Calculator" />
+
+    <item
+        android:id="@+id/nav_bmi"
+        android:icon="@drawable/scales"
+        android:iconTint="@color/white"
+        android:title="BMI"/>
+    <item
+        android:id="@+id/nav_convert"
+        android:icon="@drawable/img"
+        android:iconTint="@color/white"
+        android:title="Converter"/>
+    <item
+        android:id="@+id/nav_binary"
+        android:icon="@drawable/img_1"
+        android:iconTint="@color/white"
+        android:title="Number System"/>
+</menu>

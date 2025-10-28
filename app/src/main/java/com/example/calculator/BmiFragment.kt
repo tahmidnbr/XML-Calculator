@@ -1,47 +1,49 @@
 package com.example.calculator
 
+import android.R.attr.navigationBarColor
 import android.content.Context
-import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import com.example.calculator.databinding.ActivityBmiactivityBinding
+import com.example.calculator.databinding.FragmentBmiBinding
 import com.google.android.material.textfield.TextInputEditText
-import android.view.View
 
+class BmiFragment : Fragment() {
 
-class BMIActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityBmiactivityBinding
+    private lateinit var binding: FragmentBmiBinding
     private var activeField: TextInputEditText? = null
     private var PREFS_NAME = "prefs"
     private var KEY_ONE = "one"
     private var KEY_TWO = "two"
     private var KEY_THREE = "three"
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityBmiactivityBinding.inflate(layoutInflater)
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(binding.root)
-        window.apply {
-            decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        binding = FragmentBmiBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        requireActivity().window.apply {
+            decorView.systemUiVisibility =
+                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
             navigationBarColor = Color.TRANSPARENT
         }
-
 
         localPrefs()
 
         val activeColor = ColorStateList.valueOf(Color.parseColor("#00ADB5"))
-        binding.bmi.backgroundTintList = activeColor
-
-        binding.calculator.setOnClickListener {
-            startActivity(Intent(this@BMIActivity, MainActivity::class.java))
-        }
 
         val weight = binding.weightField
         val height = binding.heightField
@@ -63,13 +65,8 @@ class BMIActivity : AppCompatActivity() {
             isCursorVisible = true
         }
 
-        weight.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) activeField = weight
-        }
-
-        height.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) activeField = height
-        }
+        weight.setOnFocusChangeListener { _, hasFocus -> if (hasFocus) activeField = weight }
+        height.setOnFocusChangeListener { _, hasFocus -> if (hasFocus) activeField = height }
 
         val buttons = listOf(
             binding.zeroBtn, binding.oneBtn, binding.twoBtn,
@@ -77,27 +74,25 @@ class BMIActivity : AppCompatActivity() {
             binding.sixBtn, binding.sevenBtn, binding.eightBtn, binding.nineBtn
         )
 
-        for (btn in buttons) {
-            btn.setOnClickListener {
-                insertText(btn.text.toString())
-            }
+        buttons.forEach { btn ->
+            btn.setOnClickListener { insertText(btn.text.toString()) }
         }
 
         binding.equlBtn.setOnClickListener {
             val wTXT = binding.weightField.text.toString()
             val hTXT = binding.heightField.text.toString()
 
-            if (wTXT.isEmpty() ||  hTXT.isEmpty()){
-                Toast.makeText(this, "One or more inputfields are empty!", LENGTH_SHORT).show()
-            }else{
+            if (wTXT.isEmpty() || hTXT.isEmpty()) {
+                Toast.makeText(requireContext(), "One or more input fields are empty!", LENGTH_SHORT).show()
+            } else {
                 equal(wTXT, hTXT)
             }
         }
 
-        binding.acBtn.setOnClickListener {ac()}
-
+        binding.acBtn.setOnClickListener { ac() }
         binding.clrBtn.setOnClickListener { clear() }
     }
+
 
     private fun insertText(value: String) {
         activeField?.let { field ->
@@ -110,7 +105,7 @@ class BMIActivity : AppCompatActivity() {
     }
 
     private fun localPrefs(){
-        val  prefs =getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        val  prefs =requireActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val txt = prefs.getString(KEY_ONE, null)
         val txt1 = prefs.getString(KEY_TWO, null)
         val txt2 = prefs.getString(KEY_THREE, null)
@@ -146,7 +141,7 @@ class BMIActivity : AppCompatActivity() {
         val bmiRounded = "%.2f".format(bmi)
         binding.editTwo.setText(bmiRounded)
 
-        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        val prefs = requireActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         prefs.edit().apply{
             putString(KEY_ONE, bmiRounded)
             putString(KEY_TWO,  w)
@@ -154,5 +149,5 @@ class BMIActivity : AppCompatActivity() {
             apply()
         }
     }
-
 }
+
